@@ -16,4 +16,5 @@ def responce(request):
 				error = False
 				twitter.addUser(user)
 	hashtags = twitter.getHashtags(twitter.getUsersTweets())
-	return render(request, 'html/home.html', {'error': error, 'hashtags': hashtags})
+	mentions = twitter.getMentions(twitter.getUsersTweets())
+	return render(request, 'html/home.html', {'error': error, 'hashtags': hashtags, 'mentions': mentions})

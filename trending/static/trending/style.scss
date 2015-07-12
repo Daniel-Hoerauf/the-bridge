@@ -5,9 +5,19 @@ body {
 	background-color: $backgroundColor;
 }
 
-.header {
+p {
 	font-family: $fontfamily;
 	font-size: 20px;
+}
+
+.results {
+	width: 40%;
+	float: left;
+	list-style-type: decimal;
+}
+
+.detail {
+	font-size: 40px;
 }
 
 #warning {

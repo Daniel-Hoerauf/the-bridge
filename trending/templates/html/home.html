@@ -1,33 +1,39 @@
 <html>
 	<head>
-		<title>Hacking Journalism</title>
+		<title>The Bridge: Hacking Journalism</title>
 		{% load extraTags %}
 		{% load staticfiles %}
 		<link rel='stylesheet' type="text/css" href="{% static 'trending/style.css' %}"
 	</head>
 	<body>
+		<div class='detail'>
+		<p><strong>The Bridge</strong> works to span the gap between what the people are talking about and what journalists are writing about</p>
+		</div>
 		<div class='header'>
 		<p>Enter any number of twitter users whose hashtag usage you want to examine</p>
-		<p id='warning'>Enter the twitter short name without an '@' symbol, e.g. "washingtonpost" or "embedly"</p>
-		<p id='caps'>Twitter handle is not cap sensitive</p>
 		</div>
 		{% if error %}
        		<p style="color: red;">Please submit a search term.</p>
     	{% endif %}
-    	<button class='button' id='addMore'>Add another</button>
+    	<span><button class='button' id='addMore'>Add another</button></span>
 		<form class='enter_users' action="/results/" method='get'>
+			<p id='warning'>Enter the twitter short name without an '@' symbol, e.g. "washingtonpost" or "embedly"</p>
+			<p id='caps'>Twitter handle is not cap sensitive</p>
 			<ul id='inputList' style='list-style: none'>
 			<li><input type='text' name="q"></li>
 			</ul>
-			<input class='submit' type='submit' value='Collect'>
+			<span><input class='submit' type='submit' value='Collect'></span>
 		</form>
 
+		{% if mentions %}
+			<ul class='results'>
+			{{mentions|sort_mentions}}
+			</ul>
+		{% endif %}
+
 		{% if hashtags %}
-			<ul style='list-style-type: decimal'>
-			{{hashtags|sort_dict}}
-			<!--{% for key in hashtags %}
-				<li><span>{{key}}: </span><span></span></li>
-			{% endfor %}-->
+			<ul class='results'>
+			{{hashtags|sort_hashtags}}
 			</ul>
 		{% endif %}
 	</body>
