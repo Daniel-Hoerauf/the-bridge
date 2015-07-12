@@ -1,0 +1,21 @@
+$backgroundColor: #A1A1A1;
+$fontfamily: "Georgia";
+
+body {
+	background-color: $backgroundColor;
+}
+
+.header {
+	font-family: $fontfamily;
+	font-size: 20px;
+}
+
+#warning {
+	font-size: 14px;
+	font-style: italic;
+}
+
+#caps {
+	font-size: 10px;
+	font-style: oblique;
+}

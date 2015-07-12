@@ -1,0 +1,16 @@
+body {
+  background-color: #A1A1A1; }
+
+.header {
+  font-family: "Georgia";
+  font-size: 20px; }
+
+#warning {
+  font-size: 14px;
+  font-style: italic; }
+
+#caps {
+  font-size: 10px;
+  font-style: oblique; }
+
+/*# sourceMappingURL=style.css.map */
